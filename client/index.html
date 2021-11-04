@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stormworks HTTP Car</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js"></script>
+    <script src="render.js"></script>
+    <script src="controls.js"></script>
+    <script src="request.js"></script>
+    <script src="rgb.js"></script>
+</head>
+<body>
+    <canvas id='canvas'></canvas>
+    <div id='colourPicker'>
+        <input type="range" min="0" max="255" value="0" class="rgbSlider" id="rgbSliderR">
+        <input type="range" min="0" max="255" value="0" class="rgbSlider" id="rgbSliderG">
+        <input type="range" min="0" max="255" value="0" class="rgbSlider" id="rgbSliderB">
+        <div id='rgbResult' class="rgbSlider"></div>
+    </div>
+    <div class='uibutton ns' id='colourPickerButton' onclick='toggleColourPicker()'>
+        <p id='CPBtxt' class='ns'>RGB</p>
+    </div>
+    <div class='uibutton ns' id='msgButton' onclick='toggleMsg()'>
+        <p id='CPBtxt' class='ns'>MSG</p>
+    </div>
+    <input type="text" maxlength="140" id="msgBox">
+    <div id='settingsButton' onclick='toggleSettings()'>
+        <img id='settingsIcon' class='ns' src='https://cdn-icons-png.flaticon.com/512/126/126472.png'>
+    </div>
+    <div id='settingsWindow'>
+        <p class='ns'>Settings</p>
+        <div id='settingsContainer'>
+            <div class='settingBox'>
+                <p class='settingTxt ns' id='throttleSensitivityTxt'>Throttle Sensitivity</p>
+                <input type="range" min="10" max="100" value="30" step="10" class="sSlider" id="throttleSensitivitySlider">
+            </div>
+            <div class='settingBox'>
+                <p class='settingTxt ns' id='steeringSensitivityTxt'>Steering Sensitivity</p>
+                <input type="range" min="10" max="100" value="60" step="10" class="sSlider" id="steeringSensitivitySlider">
+            </div>
+            <div class='settingBox'>
+                <p class='settingTxt ns' id='viewMode'>Alternate View Mode</p>
+                <input type="checkbox" id="viewModeCheckbox">
+            </div>
+        </div>
+    </div>
+    <div class='zoomButton ns' id='zoomIn' onclick='zoomIn()'>
+        <p class='zoomTxt' class='ns'>+</p>
+    </div>
+    <div class='zoomButton ns' id='zoomOut' onclick='zoomOut()'>
+        <p class='zoomTxt' class='ns'>-</p>
+    </div>
+    <div id='reverseButton' onclick='toggleReverse()'>
+        <p id='reverseTxt' class='ns'>R</p>
+    </div>
+</body>
+</html>

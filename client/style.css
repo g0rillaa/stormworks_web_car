@@ -1,0 +1,229 @@
+body {
+    background: rgb(0,0,0);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+P {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+}
+.ns {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#colourPickerButton{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 99;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 7px;
+}
+#colourPicker{
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    bottom: 35px;
+    right: -300px;
+    z-index: 99;
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 10px;
+    transition: 0.5s;
+    padding-left: 6px;
+}
+
+
+#CPBtxt{
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+
+.rgbSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 95%;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 8px;
+    margin-top: 17px;
+}
+.rgbSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 2px solid rgb(109, 109, 109);
+    border-radius: 20px;
+}
+#rgbSliderR::-webkit-slider-thumb{
+    background: rgb(200,0,0);
+}
+#rgbSliderG::-webkit-slider-thumb{
+    background: rgb(0,200,0);
+}
+#rgbSliderB::-webkit-slider-thumb{
+    background: rgb(0,0,200);
+}
+
+.zoomButton{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 99;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 7px;
+}
+.zoomTxt{
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 7px;
+}
+#zoomIn{
+    bottom:35px;
+}
+
+#settingsButton{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 99;
+    left: 35px;
+    bottom: 0px;
+    background-color: rgb(170, 170, 170);
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 7px;
+}
+#settingsIcon{
+    width: 20px;
+    padding: 5px;
+}
+#settingsWindow{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    bottom: 50%;
+    right: 3000px;
+    transform: translate(50%,50%);
+    z-index: 99;
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#settingsContainer{
+    display: inline-block;
+    width: 100%;
+}
+.settingBox{
+    border-top: 1px solid rgb(134, 134, 134);
+    width: 100%;
+    padding-bottom: 30px;
+}
+.sSlider{
+    text-align: center;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    height: 15px;
+    background: #505050;
+    outline: none;
+    border-radius: 8px;
+    z-index: 100;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%);
+}
+.sSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 2px solid rgb(167, 167, 167);
+    border-radius: 20px;
+    background: rgb(116, 116, 116);
+}
+.settingTxt{
+    font-size: 18px;
+    padding: 0;
+}
+#viewModeCheckbox{
+    position: absolute;
+    right: 15px;
+    top: 275px;
+}
+
+
+#reverseButton{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 99;
+    left: 0px;
+    bottom: 150px;
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 7px;
+}
+#reverseTxt{
+    color: rgb(255,255,255);
+    font-size: 50px;
+    margin-top: -7px;
+}
+
+
+#msgButton{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 99;
+    right: 35px;
+    bottom: 0px;
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 7px;
+}
+#msgBox{
+    width: 500px;
+    height: 20px;
+    position: absolute;
+    bottom: -200px;
+    right: 50px;
+    z-index: 99;
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 5px;
+    transition: 0.5s;
+    background: rgb(32, 32, 32);
+    color: rgb(216, 216, 216);
+    font-size: 16px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    overflow-wrap: break-word;
+}
