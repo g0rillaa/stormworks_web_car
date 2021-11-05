@@ -145,6 +145,8 @@ P {
     border-top: 1px solid rgb(134, 134, 134);
     width: 100%;
     padding-bottom: 30px;
+    height: 35px;
+    text-align:left;
 }
 .sSlider{
     text-align: center;
@@ -173,13 +175,33 @@ P {
 .settingTxt{
     font-size: 18px;
     padding: 0;
+    margin: 0;
+    margin-top: 10px;
 }
 #viewModeCheckbox{
     position: absolute;
-    right: 15px;
-    top: 275px;
+    right: 20px;
+    top: 233px;
 }
-
+.socialLink{
+    color: rgb(184, 184, 184);
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+.socialLink:hover{
+    color: rgb(255,255,255);
+}
+#discord{
+    position: absolute;
+    left: 30px;
+}
+#steam{
+    position: absolute;
+    right: 30px;
+}
 
 #reverseButton{
     width: 60px;

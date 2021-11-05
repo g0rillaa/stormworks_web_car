@@ -13,6 +13,7 @@ var r2 = 0
 var r3 = 0
 var r4 = 0
 var msg = 'nothin|to]see[here'
+var ShttpTimeout = 0
 
 var driveT = 0
 var driveB = 0
@@ -23,15 +24,12 @@ var rgbR = 0
 var rgbG = 0
 var rgbB = 0
 
-var ShttpTimeout = 0
-
 const express = require('express');
 const app = express();
 app.use(express.json())
-
 app.get('/', (req, res) => {
     res.sendFile(`client/index.html`, {root: __dirname })
-    console.log('sent files')
+    console.log('sending files to web client')
 });
 
 app.get('/sw', (req, res) => {
@@ -52,6 +50,7 @@ app.get('/sw', (req, res) => {
     r4 = Number(args[14])
     res.send(`${driveT}?${driveB}?${driveR}?${driveS}?${rgbR/255}?${rgbG/255}?${rgbB/255}?${msg}`)
     ShttpTimeout = 0
+    scCr=scCr+1
 });
 
 app.get('/client', (req, res) => {
@@ -65,6 +64,7 @@ app.get('/client', (req, res) => {
     rgbB = Number(args[7])
     msg = args[8]
     res.send(`${spd}?${batt}?${ShttpTimeout}?${carC}?${carX}?${carY}?${tc}?${d1}?${d2}?${d3}?${d4}?${Date.now().toString()}?${r1}?${r2}?${r3}?${r4}`)
+    wcCr=wcCr+1
 });
 
 //asset requesting
@@ -82,3 +82,19 @@ app.listen(port, () => console.log(`ready`));
 setInterval(() => {
     ShttpTimeout = ShttpTimeout + 1
 },16)
+
+var wcC = false
+var scC = false
+var wcCr = 0
+var scCr = 0
+setInterval(() => {
+    if(wcCr>0){wcC=true}else{wcC=false}
+    if(scCr>0){scC=true}else{scC=false}
+    console.clear()
+    console.log('Stormworks Web Car - v1.0');
+    console.log('-----------------------------');
+    console.log(`Web Client Connected: ${wcC} (Requests/Sec: ${wcCr})`)
+    console.log(`Stormworks Car Connected: ${scC} (Requests/Sec: ${scCr})`)
+    wcCr=0
+    scCr=0
+},1000)
